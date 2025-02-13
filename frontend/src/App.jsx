@@ -7,6 +7,7 @@ import ProductPage from "./Pages/ProductPage";
 import Contact from "./Pages/Contact";
 import Pricing from "./Pages/Pricing";
 import Programme from "./Pages/Programme";
+import SelectionPage from "./Pages/SelectionPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/pricing" element={<Pricing/>}/>
       <Route path="/programs" element={<Programme/>}/>
+      <Route path="/select-role" element={<SelectionPage/>}/>
     </Routes>
     </BrowserRouter>
   

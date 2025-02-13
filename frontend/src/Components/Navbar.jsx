@@ -31,7 +31,7 @@ function Navbar() {
                 <a href="/pricing" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-red-600 focus:text-slate-950"> pricing </a>
             </div>
 
-            <a href="/signup" title="" class="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-500 ease-in-out transform hover:scale-105 bg-slate-950 border border-transparent rounded-md lg:inline-flex hover:bg-slate-950 focus:bg-slate-950" role="button"> get started now </a>
+            <a href="/select-role" title="" class="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-500 ease-in-out transform hover:scale-105 bg-slate-950 border border-transparent rounded-md lg:inline-flex hover:bg-slate-950 focus:bg-slate-950" role="button"> get started now </a>
         </nav>
 
         <nav class="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden">
@@ -46,7 +46,7 @@ function Navbar() {
             </div>
 
             <div class="px-6 mt-6">
-                <a href="/signup" title="" class="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-500 ease-in-out transform hover:scale-105 bg-slate-950 border border-transparent rounded-md tems-center hover:bg-slate-950 focus:bg-slate-950" role="button"> Get started now </a>
+                <a href="/select-role" title="" class="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-500 ease-in-out transform hover:scale-105 bg-slate-950 border border-transparent rounded-md tems-center hover:bg-slate-950 focus:bg-slate-950" role="button"> Get started now </a>
                 
 
             </div>
