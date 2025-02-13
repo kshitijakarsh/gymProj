@@ -1,5 +1,5 @@
 import React from "react";
-import gymMap from "../assets/images/gymMap.png";
+import gymMap from "../assets/images/gymMap.jpg";
 
 function Maps() {
   return (
@@ -7,9 +7,9 @@ function Maps() {
       <section class="mt-20 mb-16 py-10 bg-white sm:py-16 lg:py-24">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-24">
-            <div>
+            <div className="drop-shadow-[2px_4px_6px_rgba(0,0,0,1)] border-10 border-solid transition-all duration-500 ease-in-out transform hover:scale-105 w-fit h-fit">
               <img
-                class="w-full max-w-md mx-auto"
+                className="w-fit h-fit" // Ensures image keeps its aspect ratio
                 src={gymMap}
                 alt=""
               />
@@ -20,7 +20,9 @@ function Maps() {
                 locate gyms near you
               </h2>
               <p class="mt-6 text-base text-gray-600">
-              Discover the best gyms around your location with just a click! Our interactive map helps you locate nearby fitness centers so you can stay on track with your workout goals.
+                Discover the best gyms around your location with just a click!
+                Our interactive map helps you locate nearby fitness centers so
+                you can stay on track with your workout goals.
               </p>
 
               <a
