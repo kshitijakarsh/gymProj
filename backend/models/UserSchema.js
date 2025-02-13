@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   budget: String,
   programme: String,
   gymEnrolled: { type: Boolean, default: false },
-  pfp: String,
+  pfpUrl: String,
 });
 
 const Users = mongoose.model("User", UserSchema);

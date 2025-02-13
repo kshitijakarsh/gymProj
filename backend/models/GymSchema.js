@@ -7,6 +7,7 @@ const GymSchema = new mongoose.Schema({
   programme: String,
   trainer: String,
   contact: String,
+  
 });
 
 module.exports = mongoose.model("Gym", GymSchema); 

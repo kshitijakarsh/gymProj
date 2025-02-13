@@ -1,33 +1,35 @@
-import cloudinary from "../config/cloudinaryConfig.js";
-import multer from "multer";
+const multer = require("multer");
+const { v2: cloudinary } = require("cloudinary");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
-// Set up multer for handling file uploads
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+// Configure Cloudinary
+cloudinary.config({
+    cloud_name: "GymProj",
+});
 
-export const uploadImage = async (req, res) => {
+// Set up Cloudinary storage for multer
+const storage = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: "profile_pictures",
+        format: async () => "jpg",
+        public_id: (req, file) => file.originalname.split(".")[0], // Use filename without extension
+    },
+});
+
+// Multer middleware for handling single image uploads
+const uploadMiddleware = multer({ storage }).single("pfp");
+
+// Function to upload an image manually
+const uploadImage = async (filePath) => {
     try {
-        if (!req.file) {
-            return res.status(400).json({ error: "No file uploaded" });
-        }
-
-        // Upload image to Cloudinary
-        const result = await cloudinary.uploader.upload_stream(
-            { folder: "uploads" },
-            (error, uploadResult) => {
-                if (error) {
-                    console.error(error);
-                    return res.status(500).json({ error: "Upload failed" });
-                }
-                res.json({ imageUrl: uploadResult.secure_url });
-            }
-        ).end(req.file.buffer);
-        
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Server error" });
+        const uploadResult = await cloudinary.uploader.upload(filePath, { folder: "profile_pictures" });
+        return uploadResult.secure_url;
+    } catch (err) {
+        throw new Error("Image upload failed: " + err.message);
     }
 };
 
-// Middleware to handle file upload
-export const uploadMiddleware = upload.single("image");
+
+exports.uploadMiddleware = uploadMiddleware;
+exports.uploadImage = uploadImage;

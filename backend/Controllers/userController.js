@@ -12,6 +12,12 @@ exports.getUsers = async (req, res) => {
 exports.createUser = async (req, res) => {
   try {
     const { name, email, password, location, budget, programme, gymEnrolled = false } = req.body;
+
+    let pfpUrl = "";
+        if (req.file) {
+            const uploadResult = await uploadImage(req.file.path);
+            pfpUrl = uploadResult.secure_url;
+        }
     
     const user = new Users({
       name,
@@ -21,6 +27,7 @@ exports.createUser = async (req, res) => {
       budget,
       programme,
       gymEnrolled,
+      pfp: pfpUrl
     });
 
     await user.save();

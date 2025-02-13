@@ -14,7 +14,6 @@ mongoose.connect("mongodb://localhost:27017/");
 
 app.use("/api/users", userRoutes);
 app.use("/api/gyms", gymRoutes);
-app.use("/api", uploadRoutes);
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

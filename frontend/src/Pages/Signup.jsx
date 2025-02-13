@@ -3,6 +3,8 @@ import Navbar from "../Components/Navbar";
 import { useNavigate } from "react-router-dom";
 
 function Signup() {
+  const [image, setImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -16,6 +18,19 @@ function Signup() {
     
     agree: false,
   });
+
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      setImageUrl(URL.createObjectURL(file));
+      setFormData((prevData) => ({
+        ...prevData,
+        pfp: file,
+      }));
+    }
+  };
 
   // Handle input changes
   const handleChange = (e) => {
@@ -157,6 +172,26 @@ function Signup() {
                         className="block w-full py-4 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
                         required
                       />
+                    </div>
+
+                    <div>
+                      <label className="text-base font-medium text-gray-900">
+                        Profile Picture
+                      </label>
+                      <input
+                        type="file"
+                        name="pfpUrl"
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        className="block w-full py-2 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
+                      />
+                      {imageUrl && (
+                        <img
+                          src={imageUrl}
+                          alt="Profile Preview"
+                          className="mt-3 w-24 h-24 rounded-full object-cover"
+                        />
+                      )}
                     </div>
 
                     <div className="flex items-center">
