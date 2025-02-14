@@ -8,6 +8,7 @@ function Signup() {
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
     location: "",
@@ -15,19 +16,18 @@ function Signup() {
     programme: "",
     gymEnrolled: false,
     pfp: "",
-    
     agree: false,
   });
-
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      const imgUrl = URL.createObjectURL(file);
       setImage(file);
-      setImageUrl(URL.createObjectURL(file));
+      setImageUrl(imgUrl);
       setFormData((prevData) => ({
         ...prevData,
-        pfp: file,
+        pfp: imgUrl,
       }));
     }
   };
@@ -43,7 +43,13 @@ function Signup() {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
+
+    // Ensure pfp stores only the image URL, not the File object
+    const finalFormData = {
+      ...formData,
+      pfp: imageUrl,
+    };
 
     try {
       const response = await fetch("http://localhost:3000/api/users", {
@@ -51,12 +57,12 @@ function Signup() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(finalFormData),
       });
 
       const result = await response.json();
       if (response.ok) {
-        navigate("/")
+        navigate("/");
       } else {
         alert(result.message || "Signup failed.");
       }
@@ -84,15 +90,15 @@ function Signup() {
                   <div className="space-y-5">
                     <div>
                       <label className="text-base font-medium text-gray-900">
-                        First & Last name
+                        Full Name
                       </label>
                       <input
                         type="text"
-                        name="fullName"
-                        value={formData.fullName}
+                        name="name"
+                        value={formData.name}
                         onChange={handleChange}
                         placeholder="Enter your full name"
-                        className="block w-full py-4 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
+                        className="block w-full py-3 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
                         required
                       />
                     </div>
@@ -107,7 +113,7 @@ function Signup() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Enter email to get started"
-                        className="block w-full py-4 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
+                        className="block w-full py-3 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
                         required
                       />
                     </div>
@@ -122,39 +128,37 @@ function Signup() {
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Enter your password"
-                        className="block w-full py-4 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
+                        className="block w-full py-3 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
                         required
                       />
                     </div>
-
 
                     <div>
                       <label className="text-base font-medium text-gray-900">
                         Location
                       </label>
                       <input
-                        type="location"
+                        type="text"
                         name="location"
                         value={formData.location}
                         onChange={handleChange}
                         placeholder="Enter your location"
-                        className="block w-full py-4 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
+                        className="block w-full py-3 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
                         required
                       />
                     </div>
-
 
                     <div>
                       <label className="text-base font-medium text-gray-900">
                         Budget
                       </label>
                       <input
-                        type="budget"
+                        type="text"
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
                         placeholder="Enter your budget"
-                        className="block w-full py-4 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
+                        className="block w-full py-3 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
                         required
                       />
                     </div>
@@ -164,12 +168,12 @@ function Signup() {
                         Programme
                       </label>
                       <input
-                        type="programme"
+                        type="text"
                         name="programme"
                         value={formData.programme}
                         onChange={handleChange}
-                        placeholder="Programme"
-                        className="block w-full py-4 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
+                        placeholder="Enter your programme"
+                        className="block w-full py-3 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
                         required
                       />
                     </div>
@@ -180,10 +184,9 @@ function Signup() {
                       </label>
                       <input
                         type="file"
-                        name="pfpUrl"
                         accept="image/*"
                         onChange={handleImageChange}
-                        className="block w-full py-2 pl-3 pr-4 text-black placeholder-gray-500 bg-white border border-gray-200 rounded-md focus:outline-none"
+                        className="block w-full py-2 pl-3 pr-4 text-black bg-white border border-gray-200 rounded-md focus:outline-none"
                       />
                       {imageUrl && (
                         <img
@@ -198,35 +201,12 @@ function Signup() {
                       <input
                         type="checkbox"
                         name="gymEnrolled"
-                        id="gymEnrolled"
                         checked={formData.gymEnrolled}
                         onChange={handleChange}
                         className="w-5 h-5 text-green-500 border-gray-200 rounded"
-                      /><label htmlFor="agree" className="ml-3 text-sm text-gray-500">
-                        I'm enrolled to a gym
-                    </label>
-                      
-                    </div>
-
-                    <div className="flex items-center">
-                      <input
-                        type="checkbox"
-                        name="agree"
-                        id="agree"
-                        checked={formData.agree}
-                        onChange={handleChange}
-                        className="w-5 h-5 text-green-500 border-gray-200 rounded"
-                        required
                       />
-                      <label htmlFor="agree" className="ml-3 text-sm text-gray-500">
-                        I agree to Gymnation's{" "}
-                        <a href="#" className="text-slate-950 hover:underline">
-                          Terms of Service
-                        </a>{" "}
-                        and{" "}
-                        <a href="#" className="text-slate-950 hover:underline">
-                          Privacy Policy
-                        </a>
+                      <label className="ml-3 text-sm text-gray-500">
+                        I'm enrolled in a gym
                       </label>
                     </div>
 
@@ -236,15 +216,6 @@ function Signup() {
                     >
                       Create account
                     </button>
-
-                    <div className="text-center">
-                      <p className="text-base text-gray-600">
-                        Already have an account?{" "}
-                        <a href="/login" className="text-red-500 hover:underline">
-                          Login here
-                        </a>
-                      </p>
-                    </div>
                   </div>
                 </form>
               </div>
