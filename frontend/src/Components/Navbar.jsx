@@ -9,7 +9,7 @@ function Navbar() {
         <nav class="flex items-center justify-between h-16 lg:h-20">
             <div class="flex-shrink-0">
                 <a href="/" title="" class="flex">
-                    <img class="w-auto h-8 lg:h-10" src={Logo} alt="" />
+                    <img class="w-10 h-10 lg:h-10" src={Logo} alt="" />
                 </a>
             </div>
 

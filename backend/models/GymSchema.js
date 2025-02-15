@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const GymSchema = new mongoose.Schema({
   name: String,
   location: String,
-  charges: Number,
+  charges: String,
   programme: String,
-  trainer: String,
+  trainer: { type: Boolean, default: false },
   contact: String,
   
 });

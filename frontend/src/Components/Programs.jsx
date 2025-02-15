@@ -2,6 +2,7 @@ import React from "react";
 import boxing from "../assets/images/boxing.jpg";
 import strength from "../assets/images/strength.jpeg"
 import yoga from "../assets/images/yoga.jpg"
+import Footer from "./Footer";
 
 function Programs() {
   return (

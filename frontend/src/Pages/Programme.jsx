@@ -3,6 +3,7 @@ import { Navbar } from "../Components";
 import boxing from "../assets/images/boxing.jpg";
 import strength from "../assets/images/strength.jpeg"
 import yoga from "../assets/images/yoga.jpg"
+import Footer from "../Components/Footer";
 
 function Programme() {
   return (
@@ -61,6 +62,7 @@ function Programme() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

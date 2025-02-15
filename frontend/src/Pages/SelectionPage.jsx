@@ -23,7 +23,7 @@ function SelectionPage() {
             {/* Gym Box */}
             <div
               className="relative p-8 bg-white rounded-md shadow-md cursor-pointer transition-all duration-200 hover:shadow-xl border border-gray-200"
-              onClick={() => navigate("")}
+              onClick={() => navigate("/gym-signup")}
             >
               <h3 className="text-2xl font-semibold text-black">As a Gym</h3>
               <p className="mt-2 text-gray-600">

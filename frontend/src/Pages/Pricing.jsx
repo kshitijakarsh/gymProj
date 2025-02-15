@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "../Components";
+import Footer from "../Components/Footer";
 
 function Pricing() {
   return (
@@ -375,6 +376,7 @@ function Pricing() {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 }

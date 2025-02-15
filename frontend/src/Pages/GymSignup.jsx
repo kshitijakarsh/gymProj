@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
-import userBg from "../assets/images/userBg.jpg";
+import gymBg from "../assets/images/gymBg.jpg";
+import {useNavigate} from "react-router-dom"
 
-function Signup() {
+function GymSignup() {
+
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
     location: "",
-    budget: "",
-    programme: "",
-    gymEnrolled: false, // Corrected this
+    charges: "",
+    programmes: "",
+    trainerAvailable: false,
+    contact: "",
   });
 
   const options = ["Cardio", "Weightlifting", "Yoga", "CrossFit", "Zumba"];
@@ -40,23 +45,25 @@ function Signup() {
   const handleGymCheckbox = () => {
     setFormData((prevData) => ({
       ...prevData,
-      gymEnrolled: !prevData.gymEnrolled, // Properly updating state
+      trainerAvailable: !prevData.trainerAvailable, // Properly updating state
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/signup", formData);
+      await axios.post("http://localhost:3000/api/gyms", formData);
       setFormData({
         name: "",
         email: "",
         password: "",
         location: "",
-        budget: "",
-        programme: "",
-        gymEnrolled: false,
+        charges: "",
+        programmes: "",
+        trainerAvailable: false,
+        contact: "",
       });
+      navigate("/")
     } catch (err) {
       alert("Something went wrong, Please try again!");
     }
@@ -68,7 +75,7 @@ function Signup() {
         <div className="absolute inset-0">
           <img
             className="object-cover w-full h-full"
-            src={userBg}
+            src={gymBg}
             alt="Background"
           />
         </div>
@@ -119,14 +126,21 @@ function Signup() {
                   value={formData.location}
                   onChange={handleChange}
                 />
+
                 <InputField
-                  label="Budget"
-                  name="budget"
-                  value={formData.budget}
+                  label="contact"
+                  name="contact"
+                  value={formData.contact}
                   onChange={handleChange}
                 />
 
-                {/* Programme Checkboxes */}
+                <InputField
+                  label="charges"
+                  name="charges"
+                  value={formData.charges}
+                  onChange={handleChange}
+                />
+
                 <div className="mb-6">
                   <label className="block text-lg font-semibold text-gray-900 mb-2">
                     Programmes
@@ -158,13 +172,13 @@ function Signup() {
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
-                    name="gymEnrolled"
-                    checked={formData.gymEnrolled}
+                    name="trainerAvailable"
+                    checked={formData.trainerAvailable}
                     onChange={handleGymCheckbox}
                     className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                   />
                   <label className="text-gray-700 font-medium cursor-pointer">
-                    enrolled in gym?
+                    Trainer Available
                   </label>
                 </div>
 
@@ -219,4 +233,4 @@ const InputField = ({ label, name, type = "text", value, onChange }) => (
   </div>
 );
 
-export default Signup;
+export default GymSignup;

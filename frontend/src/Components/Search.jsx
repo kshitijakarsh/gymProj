@@ -1,20 +1,37 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
+import Footer from "./Footer";
 
 function Search() {
   const [keyword, setKeyword] = useState("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState([]); // Will store search results or all gyms
+  const [allGyms, setAllGyms] = useState([]); // Stores all gyms initially
 
+  // Fetch all gyms when the component mounts
+  useEffect(() => {
+    const fetchAllGyms = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/gyms");
+        setAllGyms(response.data);
+        setResults(response.data); // Show all gyms initially
+      } catch (error) {
+        console.error("Error fetching gyms:", error);
+      }
+    };
+    fetchAllGyms();
+  }, []);
+
+  // Fetch search results when the keyword changes
   useEffect(() => {
     if (keyword.trim() === "") {
-      setResults([]);
+      setResults(allGyms); // Show all gyms if no search input
       return;
     }
 
     const timeoutId = setTimeout(async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/filter?keyword=${keyword}`);
+        const response = await axios.get(`http://localhost:3000/api/gyms/search?keyword=${keyword}`);
         setResults(response.data);
       } catch (error) {
         console.error("Error fetching search results:", error);
@@ -22,7 +39,7 @@ function Search() {
     }, 500);
 
     return () => clearTimeout(timeoutId);
-  }, [keyword]);
+  }, [keyword, allGyms]); // Depend on allGyms to reset when data is fetched
 
   return (
     <>
@@ -44,15 +61,20 @@ function Search() {
           </div>
 
           <ul className="mt-6 list-none">
-            {results.map((Customers) => (
-              <li key={Customers._id} className="bg-white p-4 shadow-md rounded-md mb-2">
-                Gym Name : <strong> {Customers.name} </strong> - Location : <strong>{Customers.location}</strong><br />
-                Budget : <strong>{Customers.budget}</strong> - Programme : <strong>{Customers.programme}</strong>
-              </li>
-            ))}
+            {results.length > 0 ? (
+              results.map((gym) => (
+                <li key={gym._id} className="bg-white p-4 shadow-md rounded-md mb-2">
+                  Gym Name: <strong>{gym.name}</strong> - Location: <strong>{gym.location}</strong><br />
+                  Charges: <strong>{gym.charges}</strong> - Programme: <strong>{gym.programme}</strong>
+                </li>
+              ))
+            ) : (
+              <p className="text-gray-500">No gyms found.</p>
+            )}
           </ul>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
