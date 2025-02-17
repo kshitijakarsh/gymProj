@@ -9,6 +9,7 @@ import Pricing from "./Pages/Pricing";
 import Programme from "./Pages/Programme";
 import SelectionPage from "./Pages/SelectionPage";
 import GymSignup from "./Pages/GymSignup";
+import GymDashboard from "./Components/GymDashboard";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/programs" element={<Programme/>}/>
       <Route path="/select-role" element={<SelectionPage/>}/>
       <Route path="/gym-signup" element={<GymSignup/>}/>
+      <Route path="/dashboard/:userId" element={<GymDashboard/>}/>
     </Routes>
     </BrowserRouter>
   

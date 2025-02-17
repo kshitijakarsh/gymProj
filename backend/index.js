@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const gymRoutes = require("./routes/gymRoutes")
+const gymDashboardRoutes = require("./routes/gymDashboardRoutes")
 
 const app = express();
 const PORT = 3000;
@@ -14,6 +15,7 @@ mongoose.connect("mongodb://localhost:27017/");
 
 app.use("/api/users", userRoutes);
 app.use("/api/gyms", gymRoutes);
+app.use("/api/gym-dashboard", gymDashboardRoutes);
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
