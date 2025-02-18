@@ -9,7 +9,7 @@ const gymRoutes = require("./routes/gymRoutes");
 const gymDashboardRoutes = require("./routes/gymDashboardRoutes");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const DB = process.env.MONGO_URL;
 app.use(express.json());
