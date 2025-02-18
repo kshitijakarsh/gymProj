@@ -20,7 +20,7 @@ function Login() {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/api/users/login", {
+      const response = await axios.post("https://gymproj-jso7.onrender.com/api/users/login", {
         email,
         password,
       });

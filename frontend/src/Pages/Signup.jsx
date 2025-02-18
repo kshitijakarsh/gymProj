@@ -42,7 +42,7 @@ function Signup() {
 
   const onSubmit = async (formData) => {
     try {
-      const res=await axios.post("http://localhost:3000/api/users/register", formData);
+      const res=await axios.post("https://gymproj-jso7.onrender.com/api/users/register", formData);
       console.log(res)
       navigate("/");
     } catch (err) {

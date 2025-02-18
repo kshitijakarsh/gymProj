@@ -52,7 +52,7 @@ function GymSignup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/gyms", formData);
+      await axios.post("https://gymproj-jso7.onrender.com/api/gyms", formData);
       setFormData({
         name: "",
         email: "",

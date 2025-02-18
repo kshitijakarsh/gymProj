@@ -204,7 +204,7 @@ const GymDashboard = () => {
         setIsLoading(true);
         console.log(`[INFO] Fetching data for user: ${userId}`);
 
-        const response = await axios.get(`http://localhost:3000/api/gym-dashboard/${userId}`);
+        const response = await axios.get(`https://gymproj-jso7.onrender.com/api/gym-dashboard/${userId}`);
 
         if (response.data) {
           const { 
@@ -263,7 +263,7 @@ const GymDashboard = () => {
     }
 
     try {
-      const response = await axios.post(`http://localhost:3000/api/gym-dashboard/${userId}/weight`, {
+      const response = await axios.post(`https://gymproj-jso7.onrender.com/api/gym-dashboard/${userId}/weight`, {
         weight: parseFloat(currentWeight),
         date: new Date().toISOString()
       });
@@ -282,7 +282,7 @@ const GymDashboard = () => {
     e.preventDefault();
     
     try {
-      const response = await axios.put(`http://localhost:3000/api/gym-dashboard/${userId}/goals`, {
+      const response = await axios.put(`https://gymproj-jso7.onrender.com/api/gym-dashboard/${userId}/goals`, {
         targetWeight: parseFloat(targetWeight),
         calorieTarget: parseInt(calorieTarget),
         height: parseFloat(height)
@@ -304,7 +304,7 @@ const GymDashboard = () => {
       const [monthNum, day] = dateKey.split('-').map(num => parseInt(num));
       const monthName = new Date(2024, monthNum - 1).toLocaleString('default', { month: 'long' });
 
-      const response = await axios.post(`http://localhost:3000/api/gym-dashboard/${userId}/attendance`, {
+      const response = await axios.post(`https://gymproj-jso7.onrender.com/api/gym-dashboard/${userId}/attendance`, {
         month: monthName,
         day: day
       });

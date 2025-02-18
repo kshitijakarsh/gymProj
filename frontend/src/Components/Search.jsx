@@ -61,7 +61,7 @@ function Search() {
   useEffect(() => {
     const fetchAllGyms = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/gyms");
+        const response = await axios.get("https://gymproj-jso7.onrender.com/api/gyms");
         setAllGyms(response.data);
         setResults(response.data); // Show all gyms initially
       } catch (error) {
@@ -80,7 +80,7 @@ function Search() {
 
     const timeoutId = setTimeout(async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/gyms/search?keyword=${keyword}`);
+        const response = await axios.get(`https://gymproj-jso7.onrender.com/api/gyms/search?keyword=${keyword}`);
         setResults(response.data);
       } catch (error) {
         console.error("Error fetching search results:", error);
