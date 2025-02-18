@@ -1,8 +1,8 @@
-const GymDashboard = require("../models/GymDashboard");
-const Users = require("../models/UserSchema");
-const mongoose = require("mongoose");
+import GymDashboard from "../models/GymDashboard.js";
+import Users from "../models/UserSchema.js";
+import mongoose from "mongoose";
 
-const checkUserExists = async (req, res, next) => {
+export const checkUserExists = async (req, res, next) => {
   const { userId } = req.params;
 
   try {
@@ -25,7 +25,7 @@ const checkUserExists = async (req, res, next) => {
   }
 };
 
-const createGymDashboard = async (req, res) => {
+export const createGymDashboard = async (req, res) => {
   const { userId } = req.params;
 
   try {
@@ -65,7 +65,7 @@ const createGymDashboard = async (req, res) => {
 };
 
 // Function to update weight
-const updateWeight = async (req, res) => {
+export const updateWeight = async (req, res) => {
   const { month, weight } = req.body;
   const { userId } = req.params;
 
@@ -123,7 +123,7 @@ const updateWeight = async (req, res) => {
 };
 
 // Function to mark attendance
-const markAttendance = async (req, res) => {
+export const markAttendance = async (req, res) => {
   const { userId } = req.params;
   const { month, day } = req.body;
 
@@ -176,7 +176,7 @@ const markAttendance = async (req, res) => {
 };
 
 // Function to log daily calories
-const logDailyCalories = async (req, res) => {
+export const logDailyCalories = async (req, res) => {
   const { date, calories } = req.body;
   const { userId } = req.params;
 
@@ -207,7 +207,7 @@ const logDailyCalories = async (req, res) => {
 };
 
 // Function to get user dashboard
-const getUserDashboard = async (req, res) => {
+export const getUserDashboard = async (req, res) => {
   const { userId } = req.params;
 
   try {
@@ -239,7 +239,7 @@ const getUserDashboard = async (req, res) => {
 };
 
 // Function to get user name
-const getUserName = async (req, res) => {
+export const getUserName = async (req, res) => {
   const { userId } = req.params;
   try {
     if (!userId) {
@@ -258,7 +258,7 @@ const getUserName = async (req, res) => {
 };
 
 // Add this to your existing controller functions
-const updateGoals = async (req, res) => {
+export const updateGoals = async (req, res) => {
   try {
     const { userId } = req.params;
     const { targetWeight, calorieTarget, height } = req.body;
@@ -288,7 +288,7 @@ const updateGoals = async (req, res) => {
   }
 };
 
-module.exports = {
+export default {
   checkUserExists,
   createGymDashboard,
   updateWeight,

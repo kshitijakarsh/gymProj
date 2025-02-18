@@ -1,6 +1,6 @@
-const Gym = require("../models/GymSchema"); 
+import Gym from '../models/GymSchema.js';
 
-exports.getGym = async (req, res) => {
+export const getGym = async (req, res) => {
   try {
     const gyms = await Gym.find();
     res.json(gyms);
@@ -9,7 +9,7 @@ exports.getGym = async (req, res) => {
   }
 };
 
-exports.createGym = async (req, res) => {
+export const createGym = async (req, res) => {
   try {
     const { name, location, charges, programme, trainer, contact } = req.body;
 
@@ -29,8 +29,7 @@ exports.createGym = async (req, res) => {
   }
 };
 
-
-exports.searchGym = async (req, res) => {
+export const searchGym = async (req, res) => {
   try {
     const keyword = req.query.keyword;
 
@@ -47,7 +46,7 @@ exports.searchGym = async (req, res) => {
       ],
     };
 
-    const gyms = await Gym.find(query); // ✅ Fixed: Changed `Customer.find` to `Gym.find`
+    const gyms = await Gym.find(query); 
 
     if (gyms.length === 0) {
       return res.status(404).json({ message: "No matching gyms found." });

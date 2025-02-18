@@ -1,12 +1,12 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-dotenv.config({ path: "./.env" });
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const cors = require("cors");
-const userRoutes = require("./routes/userRoutes");
-const gymRoutes = require("./routes/gymRoutes");
-const gymDashboardRoutes = require("./routes/gymDashboardRoutes");
+import userRoutes from "./routes/userRoutes.js";
+import gymRoutes from "./routes/gymRoutes.js";
+import gymDashboardRoutes from "./routes/gymDashboardRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;

@@ -1,9 +1,10 @@
-const express = require("express");
+import { getGym, createGym, searchGym } from "../Controllers/gymController.js";
+import express from "express";
 const router = express.Router();
-const gymController = require("../controllers/gymController"); 
 
-router.get("/", gymController.getGym);  
-router.post("/", gymController.createGym);
-router.get("/search", gymController.searchGym);
+router.get("/", getGym);  
+router.post("/", createGym);
+router.get("/search", searchGym);
 
-module.exports = router;
+export default router;
+    

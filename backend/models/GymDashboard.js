@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-
+import mongoose from 'mongoose';
 // Schema definition for the GymDashboard
 const gymDashboardSchema = new mongoose.Schema({
   userId: {
@@ -68,4 +67,4 @@ const gymDashboardSchema = new mongoose.Schema({
 // Create a model for GymDashboard based on the schema
 const GymDashboard = mongoose.model('GymDashboard', gymDashboardSchema);
 
-module.exports = GymDashboard;
+export default GymDashboard;

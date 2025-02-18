@@ -1,7 +1,7 @@
-const Users = require("../models/UserSchema");
-const GymDashboard = require("../models/GymDashboard"); // ✅ Import GymDashboard model
+import Users from '../models/UserSchema.js';
+import GymDashboard from '../models/GymDashboard.js'; // ✅ Import GymDashboard model
 
-exports.createUser = async (req, res) => {
+export const createUser = async (req, res) => {
   try {
     const { name, email, password, location, budget, programme, gymEnrolled } = req.body;
     console.log(req.body);
@@ -60,7 +60,7 @@ exports.createUser = async (req, res) => {
   }
 };
 
-exports.loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -84,7 +84,7 @@ exports.loginUser = async (req, res) => {
   }
 };
 
-exports.getUsers = async (req, res) => {
+export const getUsers = async (req, res) => {
   try {
     console.log("Fetching all users...");
     const users = await Users.find();

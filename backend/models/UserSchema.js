@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const { customAlphabet } = require("nanoid");
+import { customAlphabet } from "nanoid";
+import mongoose from "mongoose";
 
 const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 12);
 
@@ -18,4 +18,4 @@ const UserSchema = new mongoose.Schema({
 
 const Users = mongoose.model("User", UserSchema);
 
-module.exports = Users;
+export default Users;

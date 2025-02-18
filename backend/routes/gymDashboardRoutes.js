@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const {
+import {
   checkUserExists,
   createGymDashboard,
   updateWeight,
@@ -9,8 +9,8 @@ const {
   getUserDashboard,
   getUserName,
   updateGoals
-} = require("../controllers/gymDashboardController");
-const GymDashboard = require("../models/GymDashboard");
+} from "../Controllers/gymDashboardController.js";
+import GymDashboard from "../models/GymDashboard.js";
 
 router.post("/:userId/create", checkUserExists, createGymDashboard);
 router.post("/:userId/weight", checkUserExists, updateWeight);
@@ -20,4 +20,4 @@ router.get("/:userId", checkUserExists, getUserDashboard);
 router.get("/:userId/name", getUserName);
 router.put("/:userId/goals", checkUserExists, updateGoals);
 
-module.exports = router;
+export default router;
