@@ -27,3 +27,7 @@ mongoose
 app.use("/api/users", userRoutes);
 app.use("/api/gyms", gymRoutes);
 app.use("/api/gym-dashboard", gymDashboardRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
