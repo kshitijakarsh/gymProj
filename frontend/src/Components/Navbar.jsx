@@ -24,11 +24,11 @@ function Navbar() {
             </button> */}
 
             <div class="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
-                <a href="/main" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-red-600 focus:text-slate-950"> locate </a>
+                <a href="/main" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-red-950 focus:text-slate-950"> locate </a>
 
-                <a href="/programs" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-red-600 focus:text-slate-950"> programs </a>
+                <a href="/programs" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-red-950 focus:text-slate-950"> programs </a>
 
-                <a href="/pricing" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-red-600 focus:text-slate-950"> pricing </a>
+                <a href="/pricing" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-red-950 focus:text-slate-950"> pricing </a>
             </div>
 
             <a href="/select-role" title="" class="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-500 ease-in-out transform hover:scale-105 bg-slate-950 border border-transparent rounded-md lg:inline-flex hover:bg-slate-950 focus:bg-slate-950" role="button"> get started now </a>

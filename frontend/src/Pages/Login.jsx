@@ -46,7 +46,7 @@ function Login() {
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
               Welcome Back!
             </h2>
-            <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">
+            <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-950">
               Login to your account
             </p>
           </div>
@@ -64,7 +64,7 @@ function Login() {
                       <label className="text-base font-medium text-gray-900">
                         Email address
                       </label>
-                      <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-600">
+                      <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-950">
                         <input
                           type="email"
                           placeholder="Enter email"
@@ -79,7 +79,7 @@ function Login() {
                       <label className="text-base font-medium text-gray-900">
                         Password
                       </label>
-                      <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-600">
+                      <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-950">
                         <input
                           type="password"
                           placeholder="Enter your password"
@@ -104,7 +104,7 @@ function Login() {
                         Don’t have an account?{" "}
                         <a
                           href="/signup"
-                          className="font-medium text-red-500 transition-all duration-200 hover:text-red-600 hover:underline"
+                          className="font-medium text-red-500 transition-all duration-200 hover:text-red-950 hover:underline"
                         >
                           Create a free account
                         </a>

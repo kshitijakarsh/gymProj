@@ -21,7 +21,7 @@ function Pricing() {
                   Monthly
                 </h3>
                 <p class="text-5xl font-bold text-black mt-7">$9</p>
-                <p class="mt-3 text-base text-gray-600">One-time payment</p>
+                <p class="mt-3 text-base text-gray-950">One-time payment</p>
 
                 <ul class="inline-flex flex-col items-start space-y-5 text-left mt-9">
                   <li class="inline-flex items-center space-x-2">
@@ -141,7 +141,7 @@ function Pricing() {
                   Half-Yearly
                 </h3>
                 <p class="text-5xl font-bold text-black mt-7">$45</p>
-                <p class="mt-3 text-base text-gray-600">One-time payment</p>
+                <p class="mt-3 text-base text-gray-950">One-time payment</p>
 
                 <ul class="inline-flex flex-col items-start space-y-5 text-left mt-9">
                   <li class="inline-flex items-center space-x-2">
@@ -260,7 +260,7 @@ function Pricing() {
                   Yearly
                 </h3>
                 <p class="text-5xl font-bold text-black mt-7">$90</p>
-                <p class="mt-3 text-base text-gray-600">One-time payment</p>
+                <p class="mt-3 text-base text-gray-950">One-time payment</p>
 
                 <ul class="inline-flex flex-col items-start space-y-5 text-left mt-9">
                   <li class="inline-flex items-center space-x-2">

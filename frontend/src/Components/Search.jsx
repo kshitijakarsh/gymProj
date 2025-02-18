@@ -3,6 +3,55 @@ import Navbar from "./Navbar";
 import axios from "axios";
 import Footer from "./Footer";
 
+const GymCard = ({ gym }) => (
+  <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+    <div className="p-6">
+      <div className="flex justify-between items-start">
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">{gym.name}</h3>
+          <div className="space-y-2">
+            <div className="flex items-center text-gray-950">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>{gym.location}</span>
+            </div>
+            
+            <div className="flex items-center text-gray-950">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>₹{gym.charges}/month</span>
+            </div>
+
+            <div className="flex items-center text-gray-950">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <div className="flex flex-wrap gap-2">
+                {gym.programme.split(',').map((prog, index) => (
+                  <span key={index} className="px-2 py-1 text-sm bg-slate-100 text-slate-950 rounded-full">
+                    {prog.trim()}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-end">
+          {gym.trainerAvailable && (
+            <span className="px-3 py-1 text-sm bg-green-100 text-green-950 rounded-full">
+              Trainer Available
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 function Search() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState([]); // Will store search results or all gyms
@@ -60,18 +109,17 @@ function Search() {
             </div>
           </div>
 
-          <ul className="mt-6 list-none">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             {results.length > 0 ? (
               results.map((gym) => (
-                <li key={gym._id} className="bg-white p-4 shadow-md rounded-md mb-2">
-                  Gym Name: <strong>{gym.name}</strong> - Location: <strong>{gym.location}</strong><br />
-                  Charges: <strong>{gym.charges}</strong> - Programme: <strong>{gym.programme}</strong>
-                </li>
+                <GymCard key={gym._id} gym={gym} />
               ))
             ) : (
-              <p className="text-gray-500">No gyms found.</p>
+              <div className="col-span-full text-center py-10">
+                <p className="text-gray-500 text-lg">No gyms found matching your search.</p>
+              </div>
             )}
-          </ul>
+          </div>
         </div>
       </section>
       <Footer />

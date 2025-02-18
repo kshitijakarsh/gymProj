@@ -13,7 +13,7 @@ function Programs() {
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">
               programs we offer
             </h2>
-            <p className="max-w-2xl mx-auto mt-4 text-xl text-gray-600">
+            <p className="max-w-2xl mx-auto mt-4 text-xl text-gray-950">
               Build strength, boost endurance, and enhance flexibility with
               expert-led training, boxing & HIIT, yoga, and personalized
               coaching for your ultimate transformation.

@@ -88,11 +88,11 @@ function GymSignup() {
                 <h2 className="text-3xl font-bold text-gray-900">
                   Create an account
                 </h2>
-                <p className="mt-2 text-base text-gray-600">
+                <p className="mt-2 text-base text-gray-950">
                   Already joined?{" "}
                   <a
                     href="/login"
-                    className="text-blue-600 hover:underline hover:text-blue-700"
+                    className="text-red-600 hover:underline hover:text-red-900"
                   >
                     Sign in now
                   </a>
@@ -158,7 +158,7 @@ function GymSignup() {
                             .split(",")
                             .includes(option)}
                           onChange={handleCheckboxChange}
-                          className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          className="w-5 h-5 text-slate-950 bg-gray-100 border-gray-300 rounded focus:ring-slate-500"
                         />
                         <span className="text-gray-700 font-medium">
                           {option}
@@ -175,7 +175,7 @@ function GymSignup() {
                     name="trainerAvailable"
                     checked={formData.trainerAvailable}
                     onChange={handleGymCheckbox}
-                    className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                    className="w-5 h-5 text-slate-950 bg-gray-100 border-gray-300 rounded focus:ring-slate-500"
                   />
                   <label className="text-gray-700 font-medium cursor-pointer">
                     Trainer Available
@@ -185,24 +185,24 @@ function GymSignup() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full px-4 py-4 text-base font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none"
+                    className="w-full px-4 py-4 text-base font-semibold text-white bg-slate-950 rounded-md hover:bg-slate-700 focus:outline-none"
                   >
                     Sign up
                   </button>
                 </div>
               </form>
 
-              <p className="max-w-xs mx-auto mt-5 text-sm text-center text-gray-600">
+              <p className="max-w-xs mx-auto mt-5 text-sm text-center text-gray-950">
                 <a
                   href="#"
-                  className="text-blue-600 hover:underline hover:text-blue-700"
+                  className="text-slate-950 hover:underline hover:text-slate-700"
                 >
                   Privacy Policy
                 </a>{" "}
                 &{" "}
                 <a
                   href="#"
-                  className="text-blue-600 hover:underline hover:text-blue-700"
+                  className="text-slate-950 hover:underline hover:text-slate-700"
                 >
                   Terms of Service
                 </a>
@@ -226,7 +226,7 @@ const InputField = ({ label, name, type = "text", value, onChange }) => (
         value={value}
         onChange={onChange}
         placeholder={`Enter your ${label.toLowerCase()}`}
-        className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600"
+        className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-slate-950"
         required
       />
     </div>

@@ -14,7 +14,7 @@ function Footer() {
                 alt=""
               />
 
-              <p class="text-base leading-relaxed text-gray-600 mt-7">
+              <p class="text-base leading-relaxed text-gray-950 mt-7">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
               </p>
@@ -50,7 +50,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     About{" "}
@@ -61,7 +61,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Features{" "}
@@ -72,7 +72,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Works{" "}
@@ -83,7 +83,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Career{" "}
@@ -100,7 +100,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Customer Support{" "}
@@ -111,7 +111,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Delivery Details{" "}
@@ -122,7 +122,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Terms & Conditions{" "}
@@ -133,7 +133,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Privacy Policy{" "}
@@ -150,7 +150,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Free eBooks{" "}
@@ -161,7 +161,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Development Tutorial{" "}
@@ -172,7 +172,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     How to - Blog{" "}
@@ -183,7 +183,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     YouTube Playlist{" "}
@@ -200,7 +200,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Customer Support{" "}
@@ -211,7 +211,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Delivery Details{" "}
@@ -222,7 +222,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Terms & Conditions{" "}
@@ -233,7 +233,7 @@ function Footer() {
                   <a
                     href="#"
                     title=""
-                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"
+                    class="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-950 focus:text-orange-950"
                   >
                     {" "}
                     Privacy Policy{" "}
@@ -246,7 +246,7 @@ function Footer() {
           <hr class="mt-16 mb-10 border-gray-200" />
 
           <div class="sm:flex sm:items-center sm:justify-between">
-            <p class="text-sm text-gray-600">
+            <p class="text-sm text-gray-950">
               © Copyright 2021, All Rights Reserved by Gymnation
             </p>
 
@@ -255,7 +255,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600"
+                  class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-950 hover:text-white focus:text-white hover:bg-orange-950 hover:border-orange-950 focus:border-orange-950"
                 >
                   <svg
                     class="w-4 h-4"
@@ -272,7 +272,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600"
+                  class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-950 hover:text-white focus:text-white hover:bg-orange-950 hover:border-orange-950 focus:border-orange-950"
                 >
                   <svg
                     class="w-4 h-4"
@@ -289,7 +289,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600"
+                  class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-950 hover:text-white focus:text-white hover:bg-orange-950 hover:border-orange-950 focus:border-orange-950"
                 >
                   <svg
                     class="w-4 h-4"
@@ -308,7 +308,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600"
+                  class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-950 hover:text-white focus:text-white hover:bg-orange-950 hover:border-orange-950 focus:border-orange-950"
                 >
                   <svg
                     class="w-4 h-4"

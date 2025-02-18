@@ -19,7 +19,7 @@ function Maps() {
               <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
                 locate gyms near you
               </h2>
-              <p class="mt-6 text-base text-gray-600">
+              <p class="mt-6 text-base text-gray-950">
                 Discover the best gyms around your location with just a click!
                 Our interactive map helps you locate nearby fitness centers so
                 you can stay on track with your workout goals.

@@ -46,7 +46,7 @@ const Card = ({ children, className = "" }) => (
 const StatCard = ({ icon: Icon, title, value, unit = "", className = "" }) => (
   <Card className={`transform hover:scale-105 transition-all duration-300 ${className}`}>
     <div className="p-6">
-      <div className="flex items-center gap-2 text-gray-600 mb-2">
+      <div className="flex items-center gap-2 text-gray-950 mb-2">
         <Icon />
         <span className="font-medium">{title}</span>
       </div>
@@ -131,7 +131,7 @@ const MonthlyCalendar = ({ month, attendance, onToggle }) => {
                   aspect-square rounded-lg text-sm font-medium
                   transition-all duration-200 flex items-center justify-center
                   ${canToggle ? 'hover:bg-gray-100' : 'cursor-not-allowed opacity-50'}
-                  ${attendance[dateKey] ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-white'}
+                  ${attendance[dateKey] ? 'bg-green-500 text-white hover:bg-green-950' : 'bg-white'}
                 `}
               >
                 {day}
@@ -145,12 +145,12 @@ const MonthlyCalendar = ({ month, attendance, onToggle }) => {
 };
 
 const MotivationCard = ({ icon: Icon, title, message }) => (
-  <div className="bg-gradient-to-br from-blue-50 to-white p-4 rounded-xl border border-blue-100 shadow-sm">
-    <div className="flex items-center gap-2 text-blue-600 mb-2">
+  <div className="bg-gradient-to-br from-slate-50 to-white p-4 rounded-xl border border-slate-100 shadow-sm">
+    <div className="flex items-center gap-2 text-slate-950 mb-2">
       <Icon />
       <h3 className="font-semibold">{title}</h3>
     </div>
-    <p className="text-gray-600 text-sm">{message}</p>
+    <p className="text-gray-950 text-sm">{message}</p>
   </div>
 );
 
@@ -171,7 +171,7 @@ const StyledInput = ({ label, value, onChange, placeholder, unit, type = "number
         min={min}
         step={step}
         className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 
-                 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
+                 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 
                  transition-all duration-200 bg-white
                  placeholder-gray-400 text-gray-700"
       />
@@ -352,8 +352,8 @@ const GymDashboard = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading your dashboard...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-500 mx-auto"></div>
+          <p className="mt-4 text-gray-950">Loading your dashboard...</p>
         </div>
       </div>
     );
@@ -363,11 +363,11 @@ const GymDashboard = () => {
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100">
-        <div className="text-center text-red-600">
+        <div className="text-center text-red-950">
           <p className="text-xl font-semibold">{error}</p>
           <button 
             onClick={() => window.location.reload()}
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="mt-4 px-4 py-2 bg-slate-500 text-white rounded-lg hover:bg-slate-950 transition-colors"
           >
             Try Again
           </button>
@@ -382,17 +382,17 @@ const GymDashboard = () => {
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-6">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Enhanced Header Section */}
-          <Card className="p-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+          <Card className="p-6 bg-gradient-to-r from-slate-500 to-slate-950 text-white">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
                 <h1 className="text-3xl font-bold">
                   Welcome back, {name || 'User'} 👋
                 </h1>
-                <p className="text-blue-100 mt-2">
+                <p className="text-slate-100 mt-2">
                   Your fitness journey continues! 💪
                 </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg text-blue-50">
+              <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg text-slate-50">
                 {new Date().toLocaleDateString('en-US', { 
                   weekday: 'long', 
                   year: 'numeric', 
@@ -461,7 +461,7 @@ const GymDashboard = () => {
           <div className="max-w-4xl mx-auto"> {/* Wrapper for centering */}
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-                <Icons.Chart className="text-blue-500" />
+                <Icons.Chart className="text-slate-500" />
                 Weight Progress Journey 📈
               </h2>
               <div className="h-[400px] w-full">
@@ -472,9 +472,9 @@ const GymDashboard = () => {
 
           {/* Forms Section with Enhanced Styling */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-50 via-white to-white">
+            <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-slate-50 via-white to-white">
               <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-                <Icons.Weight className="text-blue-500" />
+                <Icons.Weight className="text-slate-500" />
                 Track Today's Progress 📝
               </h2>
               <form onSubmit={handleWeightSubmit} className="space-y-6">
@@ -489,19 +489,19 @@ const GymDashboard = () => {
                 />
                 
                 {currentWeight && (
-                  <div className="text-sm text-gray-600 bg-blue-50 p-3 rounded-lg flex items-center gap-2">
-                    <Icons.Calendar className="text-blue-500 w-4 h-4" />
+                  <div className="text-sm text-gray-950 bg-slate-50 p-3 rounded-lg flex items-center gap-2">
+                    <Icons.Calendar className="text-slate-500 w-4 h-4" />
                     Last recorded: {new Date().toLocaleDateString()}
                   </div>
                 )}
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-500 text-white py-3 px-4 rounded-lg
-                           hover:bg-blue-600 active:bg-blue-700
+                  className="w-full bg-slate-500 text-white py-3 px-4 rounded-lg
+                           hover:bg-slate-950 active:bg-slate-700
                            transition-colors duration-200
                            flex items-center justify-center gap-2
-                           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                           focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
                 >
                   <Icons.Save />
                   Update Weight
@@ -547,7 +547,7 @@ const GymDashboard = () => {
                 <button
                   type="submit"
                   className="w-full bg-purple-500 text-white py-3 px-4 rounded-lg
-                           hover:bg-purple-600 active:bg-purple-700
+                           hover:bg-purple-950 active:bg-purple-700
                            transition-colors duration-200
                            flex items-center justify-center gap-2
                            focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
@@ -562,7 +562,7 @@ const GymDashboard = () => {
           {/* Enhanced Calendar Section */}
           <Card className="p-6 hover:shadow-lg transition-shadow">
             <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-              <Icons.Calendar className="text-blue-500" />
+              <Icons.Calendar className="text-slate-500" />
               Attendance Tracker 📅
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

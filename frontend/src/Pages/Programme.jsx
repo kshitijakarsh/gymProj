@@ -27,7 +27,7 @@ function Programme() {
               <h3 class="mt-8 text-xl font-semibold leading-tight text-black">
                 Boxing
               </h3>
-              <p class="mt-4 text-base text-gray-600">
+              <p class="mt-4 text-base text-gray-950">
               Boxing is a sport of strength, speed, and strategy.
               </p>
             </div>
@@ -41,7 +41,7 @@ function Programme() {
               <h3 class="mt-8 text-xl font-semibold leading-tight text-black">
                 Strength
               </h3>
-              <p class="mt-4 text-base text-gray-600">
+              <p class="mt-4 text-base text-gray-950">
               Strength training builds muscle, power, and endurance.
               </p>
             </div>
@@ -55,7 +55,7 @@ function Programme() {
               <h3 class="mt-8 text-xl font-semibold leading-tight text-black">
                 Yoga
               </h3>
-              <p class="mt-4 text-base text-gray-600">
+              <p class="mt-4 text-base text-gray-950">
               Yoga enhances flexibility, balance, and mindfulness.
               </p>
             </div>

@@ -14,7 +14,7 @@ function SelectionPage() {
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
               Choose Your Role
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <p className="mt-4 text-lg text-gray-950">
               Select how you want to proceed
             </p>
           </div>
@@ -26,7 +26,7 @@ function SelectionPage() {
               onClick={() => navigate("/gym-signup")}
             >
               <h3 className="text-2xl font-semibold text-black">As a Gym</h3>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-gray-950">
                 Register as a gym and manage your members.
               </p>
             </div>
@@ -37,7 +37,7 @@ function SelectionPage() {
               onClick={() => navigate("/signup")}
             >
               <h3 className="text-2xl font-semibold text-black">As a User</h3>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-gray-950">
                 Sign up as a user to track workouts and progress.
               </p>
             </div>
