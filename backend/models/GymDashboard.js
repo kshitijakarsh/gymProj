@@ -3,46 +3,66 @@ const mongoose = require('mongoose');
 // Schema definition for the GymDashboard
 const gymDashboardSchema = new mongoose.Schema({
   userId: {
-    type: String, // Changed from ObjectId to String
+    type: String,
     required: true,
   },
-  monthlyData: [
-    {
-      month: {
-        type: String,
-        required: true,
-      },
-      weight: {
-        type: Number,
-        required: true,
-      },
+  monthlyData: [{
+    date: {
+      type: String,
+      required: true,
     },
-  ],
-  attendance: {
-    type: Map,
-    of: Boolean,
-    default: {}
-  },
+    weight: {
+      type: Number,
+      required: true,
+    }
+  }],
+  weightHistory: [{
+    month: {
+      type: String,
+      required: true,
+    },
+    weight: {
+      type: Number,
+      required: true,
+    }
+  }],
+  dailyCalories: [{
+    date: {
+      type: String,
+      required: true,
+    },
+    calories: {
+      type: Number,
+      required: true,
+    }
+  }],
+  attendance: [{
+    month: {
+      type: String,
+      required: true
+    },
+    daysPresent: [{
+      type: Number,
+      min: 1,
+      max: 31
+    }]
+  }],
   targetWeight: {
     type: Number,
-    required: false, // Changed to false
     default: null
   },
   height: {
     type: Number,
-    required: false, // Changed to false
     default: null
   },
   calorieTarget: {
     type: Number,
-    required: false, // Changed to false
     default: null
   },
   currentWeight: {
     type: Number,
-    required: false, // Changed to false
     default: null
-  },
+  }
 });
 
 // Create a model for GymDashboard based on the schema
