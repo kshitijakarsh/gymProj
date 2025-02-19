@@ -3,7 +3,6 @@ import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-// Icons for better visual hierarchy
 const Icons = {
   Search: () => (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

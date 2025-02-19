@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-// Schema definition for the GymDashboard
 const gymDashboardSchema = new mongoose.Schema({
   userId: {
     type: String,
@@ -11,26 +10,6 @@ const gymDashboardSchema = new mongoose.Schema({
       required: true,
     },
     weight: {
-      type: Number,
-      required: true,
-    }
-  }],
-  weightHistory: [{
-    month: {
-      type: String,
-      required: true,
-    },
-    weight: {
-      type: Number,
-      required: true,
-    }
-  }],
-  dailyCalories: [{
-    date: {
-      type: String,
-      required: true,
-    },
-    calories: {
       type: Number,
       required: true,
     }
@@ -64,7 +43,6 @@ const gymDashboardSchema = new mongoose.Schema({
   }
 });
 
-// Create a model for GymDashboard based on the schema
 const GymDashboard = mongoose.model('GymDashboard', gymDashboardSchema);
 
 export default GymDashboard;
